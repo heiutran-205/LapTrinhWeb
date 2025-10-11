@@ -16,6 +16,6 @@ namespace YourNamespace.Models
         public string CategoryName { get; set; }
 
         // Thuộc tính quan hệ
-        public ICollection<Book> Books { get; set; }
+        public ICollection<Book>? Books { get; set; }
     }
 }
