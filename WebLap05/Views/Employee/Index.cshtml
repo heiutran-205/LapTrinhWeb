@@ -1,0 +1,39 @@
+﻿@model List<WebLap05.Models.Employee>
+
+@{
+    ViewData["Title"] = "Danh sách nhân viên";
+}
+
+<h2>Danh sách nhân viên</h2>
+
+<p>Xin chào, @Context.Session.GetString("UserFullName")!</p>
+<p><a asp-action="Logout" asp-controller="Login">Đăng xuất</a></p>
+
+
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Họ tên</th>
+            <th>Giới tính</th>
+            <th>SĐT</th>
+            <th>Email</th>
+            <th>Lương</th>
+            <th>Tình trạng</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in Model)
+        {
+            <tr>
+                <td>@emp.Id</td>
+                <td>@emp.FullName</td>
+                <td>@emp.Gender</td>
+                <td>@emp.Phone</td>
+                <td>@emp.Email</td>
+                <td>@emp.Salary</td>
+                <td>@emp.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>
